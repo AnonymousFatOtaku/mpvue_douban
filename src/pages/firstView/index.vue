@@ -16,7 +16,7 @@
       </swiper-item>
     </swiper>
     <!-- 频繁切换使用v-show，否则v-if -->
-    <button class="btn" v-show="index === 3">开始体验</button>
+    <button @click="toIndex" class="btn" v-show="index === 3">开始体验</button>
   </div>
 </template>
 
@@ -32,6 +32,12 @@
       handleChange(event) {
         this.index = event.mp.detail.current // 更新index的状态值
       },
+      // 跳转至index页面
+      toIndex(){
+        wx.switchTab({
+          url: '/pages/index/main'
+        })
+      }
     }
   }
 </script>
