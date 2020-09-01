@@ -3,7 +3,9 @@
     "pages/firstView/main",
     "pages/index/main",
     "pages/personal/main",
-    "pages/searchBook/main"
+    "pages/searchBook/main",
+    "pages/detail/main",
+    "pages/booksList/main"
   ],
   "window": {
     "navigationBarBackgroundColor": "#02a774",

@@ -8,10 +8,10 @@
     <div class="booksList">
       <div class="listNav">
         <span>全部商品</span>
-        <span class="more"> > </span>
+        <span class="more" @click="toBooksList(booksArr)"> > </span>
       </div>
       <div class="list">
-        <div class="bookItem" v-for="(item,index) in booksArr" :key="index">
+        <div @click="toDetail(item)" class="bookItem" v-for="(item,index) in booksArr" :key="index">
           <img :src="item.image" alt="">
           <p>《{{item.title}}》</p>
           <p>{{item.author}}</p>
@@ -36,6 +36,20 @@
         return [...this.booksArr].splice(0, 4)
       }
     },
+    methods: {
+      // 跳转到详情页
+      toDetail(bookItem){
+        wx.navigateTo({
+          url: '/pages/detail/main?bookItem=' + JSON.stringify(bookItem)
+        })
+      },
+      // 跳转至图书列表页booksList
+      toBooksList(booksArr){
+        wx.navigateTo({
+          url: '/pages/booksList/main?booksArr=' + JSON.stringify(booksArr)
+        })
+      }
+    }
   }
 </script>
 
