@@ -22,7 +22,7 @@
     },
     mounted(){
       console.log(this);
-      // 路由跳转的时候使用
+      // 只在路由跳转的时候使用
       if(this.$mp){
         this.booksArr = JSON.parse(this.$mp.query.booksArr)
       }
