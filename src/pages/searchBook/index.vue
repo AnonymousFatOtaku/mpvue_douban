@@ -26,17 +26,12 @@
         this.booksArr = []
       },
       // 搜索功能函数
-      handleSearch(){
+      async handleSearch(){
         // 获取用户输入的内容
         let data = {req: this.searchContent}
         // 发送请求给服务器获取数据
-        wx.request({
-          url:'http://localhost:3000/searchBooks',
-          data,
-          success:(res)=>{
-            this.booksArr=res.data
-          }
-        })
+        let result = await request('/searchBooks', data);
+        this.booksArr = result
       }
     }
   }
