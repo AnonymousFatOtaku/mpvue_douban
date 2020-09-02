@@ -1,7 +1,7 @@
 <template>
   <div id="searchContainer">
     <div class="searchHeader">
-      <input @confirm="handleSearch" confirm-type="搜索" v-model="searchContent" type="text" placeholder="书中自有黄金屋" placeholder-class="placeholder">
+      <input @confirm="handleSearch" confirm-type="search" v-model="searchContent" type="text" placeholder="书中自有黄金屋" placeholder-class="placeholder">
       <span @click="handleClear" class="clear" v-show="searchContent">X</span>
     </div>
     <div v-if="booksArr.length">
